@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // A single, life-altering quote.
-const DEEP_QUOTE = { text: "What you seek is seeking you.", author: "Rumi" };
+const DEEP_QUOTE = { text: "What you seek is seeking you...", author: "Rumi 🕊️" };
 
 export default function SplashScreen() {
   const [showShutter, setShowShutter] = useState(true);
