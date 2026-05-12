@@ -320,30 +320,32 @@ export default function PageMain(): React.ReactElement {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <header className="relative pt-32 pb-0 bg-transparent border-b-2 border-black overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative">
+      <header className="relative pt-12 md:pt-32 pb-12 bg-transparent border-b-2 border-black overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 items-center relative">
+            {/* TEXT SECTION */}
             <div className="lg:col-span-7 flex flex-col justify-center relative z-20">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="bg-red-600 text-white px-3 py-1 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest transform -rotate-2 border border-black shadow-sm flex items-center gap-2">
+                {/* Status Badge */}
+                <div className="flex items-center gap-2 md:gap-4 my-8 md:mb-6">
+                  <span className="bg-red-600 text-white px-2 md:px-3 py-1 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest transform -rotate-2 border border-black shadow-sm flex items-center gap-1 md:gap-2 shrink-0">
                     <CheckCircle size={12} /> Ready to Work ✌️
                   </span>
                   <div className="h-[2px] flex-grow bg-black relative">
                     <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full"></div>
                     <div className="absolute right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full border border-black"></div>
                   </div>
-                  <span className="font-mono text-[10px] md:text-xs font-bold">
+                  <span className="font-mono text-[10px] md:text-xs font-bold shrink-0">
                     STARTING ARC
                   </span>
                 </div>
 
-                <h1 className="md:text-7xl lg:text-8xl  font-display font-black leading-[0.9] tracking-tighter mb-8 relative group cursor-default">
+                {/* Main Headline */}
+                <h1 className="text-[12vw] sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.85] tracking-tighter mb-6 md:mb-8 relative group cursor-default uppercase w-full">
                   FULL STACK
                   <br />
                   <span className="text-stroke-sm relative text-transparent bg-clip-text bg-gradient-to-b from-black to-black/80 group-hover:text-red-600 transition-all duration-300">
@@ -351,48 +353,54 @@ export default function PageMain(): React.ReactElement {
                   </span>
                 </h1>
 
-                <p className="font-serif italic text-lg md:text-2xl leading-relaxed max-w-xl mb-10 border-l-4 border-red-600 pl-6 text-gray-800 bg-white/50 backdrop-blur-sm py-2">
+                {/* Quote Box */}
+                <p className="font-serif italic text-sm sm:text-lg md:text-2xl leading-relaxed max-w-xl mb-8 md:mb-10 border-l-4 border-red-600 pl-4 md:pl-6 text-gray-800 bg-white/50 backdrop-blur-sm py-2">
                   &quot;I craft high-performance web experiences. Clean code,
                   modern design, and ready to scale. Let&apos;s build something
                   extraordinary together.&quot;
                 </p>
 
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="/projects"
-                    className="bg-black text-white px-6 md:px-8 py-3 md:py-4 font-mono font-bold uppercase hover:bg-red-600 transition-colors manga-shadow active:translate-x-1 active:translate-y-1 active:shadow-none border-2 border-transparent flex items-center gap-2 group text-sm md:text-base"
+                {/* Buttons Container */}
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full pb-2">
+                  <Link
+                    href="https://github.com/StarDust130"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto justify-center bg-red-600 text-white px-6 md:px-8 py-3.5 md:py-4 font-mono font-bold uppercase hover:bg-black transition-colors manga-shadow active:translate-x-1 active:translate-y-1 active:shadow-none border-2 border-black flex items-center gap-2 group text-xs md:text-base"
                   >
                     See My Projects{" "}
                     <ArrowRight
                       size={16}
                       className="group-hover:translate-x-1 transition-transform"
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="mailto:csyadav0513@gmail.com"
-                    className="bg-white text-black border-2 border-black px-6 md:px-8 py-3 md:py-4 font-mono font-bold uppercase hover:bg-yellow-400 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center gap-2 text-sm md:text-base"
+                    className="w-full sm:w-auto justify-center bg-white text-black border-2 border-black px-6 md:px-8 py-3.5 md:py-4 font-mono font-bold uppercase hover:bg-yellow-400 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center gap-2 text-xs md:text-base"
                   >
                     <Mail size={16} /> Let&apos;s Talk
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </div>
 
-            <div className="lg:col-span-5 relative h-[400px] md:h-[500px] lg:h-[600px] flex items-end justify-center mt-8 lg:mt-0">
+            {/* IMAGE SECTION */}
+            <div className="lg:col-span-5 relative w-full aspect-[4/5] sm:aspect-auto sm:h-[400px] md:h-[500px] lg:h-[600px] max-w-[380px] sm:max-w-[450px] lg:max-w-none mx-auto flex items-end justify-center mt-12 lg:mt-0 px-2 sm:px-0">
               <motion.div
-                className="absolute inset-0 bg-yellow-400 border-2 border-black rotate-3 z-0 top-10"
-                initial={{ opacity: 0, rotate: 0 }}
-                animate={{ opacity: 1, rotate: 3 }}
+                className="absolute inset-0 bg-yellow-400 border-2 border-black translate-x-3 translate-y-3 md:translate-x-0 md:translate-y-0 md:rotate-3 md:top-8 z-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               ></motion.div>
 
               <div className="relative z-10 w-full h-full bg-white border-2 border-black overflow-hidden flex flex-col shadow-xl">
-                <div className="border-b-2 border-black bg-black text-white p-2 flex justify-between font-mono text-[10px] md:text-xs uppercase items-center shrink-0 z-20 relative">
-                  <span className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>{" "}
+                {/* Image Card Top Bar */}
+                <div className="border-b-2 border-black bg-black text-white p-2 flex justify-between font-mono text-[9px] sm:text-[10px] md:text-xs uppercase items-center shrink-0 z-20 relative">
+                  <span className="flex items-center gap-2 whitespace-nowrap">
+                    <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shrink-0"></div>{" "}
                     REC // CAM 01
                   </span>
-                  <span>Potential: MAX</span>
+                  <span className="whitespace-nowrap">Potential: MAX</span>
                 </div>
 
                 <div className="flex-grow relative bg-gray-200 overflow-hidden group">
@@ -408,8 +416,9 @@ export default function PageMain(): React.ReactElement {
                   />
 
                   <div className="absolute inset-0 w-full h-full">
+                    {/* CRITICAL FIX: Re-inserted Next.js Image component here */}
                     <Image
-                      src={heroImages[0]}
+                      src={heroImages[currentHeroImage]} // Uses your state variable
                       alt="Chandrashekhar"
                       fill
                       priority
@@ -425,15 +434,16 @@ export default function PageMain(): React.ReactElement {
                       }}
                     />
 
-                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-6 text-white pt-24">
-                      <h3 className="text-3xl md:text-4xl font-display font-bold mb-1 uppercase">
+                    {/* Gradient Overlay text */}
+                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-4 md:p-6 text-white pt-20">
+                      <h3 className="text-xl sm:text-3xl md:text-4xl font-display font-bold mb-1 uppercase leading-none">
                         Chandrashekhar
                       </h3>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-[10px] bg-red-600 text-white px-2 py-0.5 font-bold">
+                      <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
+                        <span className="font-mono text-[8px] md:text-[10px] bg-red-600 text-white px-1.5 py-0.5 font-bold shrink-0">
                           DEVELOPER
                         </span>
-                        <span className="font-mono text-[10px] opacity-80 uppercase tracking-widest">
+                        <span className="font-mono text-[8px] md:text-[10px] opacity-80 uppercase tracking-widest shrink-0">
                           Next.js Enthusiast
                         </span>
                       </div>
@@ -441,13 +451,18 @@ export default function PageMain(): React.ReactElement {
                   </div>
                 </div>
 
-                <div className="border-t-2 border-black p-4 bg-white flex justify-between items-center relative overflow-hidden shrink-0 z-20">
+                {/* Bottom Status Bar */}
+                <div className="border-t-2 border-black p-2.5 sm:p-3 md:p-4 bg-white flex justify-between items-center relative overflow-hidden shrink-0 z-20">
                   <div className="absolute -left-2 top-0 bottom-0 w-4 bg-red-600 transform skew-x-12 opacity-20"></div>
-                  <span className="font-serif font-bold text-base md:text-lg z-10">
+                  <span className="font-serif font-bold text-xs sm:text-base md:text-lg z-10 shrink-0">
                     STATUS
                   </span>
-                  <Link href="mailto:csyadav0513@gmail.com" target="_blank">
-                    <span className="font-mono text-xl md:text-3xl font-black tracking-tighter z-10 uppercase hover:text-red-500 transition-colors">
+                  <Link
+                    href="mailto:csyadav0513@gmail.com"
+                    target="_blank"
+                    className="z-10 truncate ml-2"
+                  >
+                    <span className="font-mono text-sm sm:text-xl md:text-3xl font-black tracking-tighter uppercase hover:text-red-500 transition-colors whitespace-nowrap">
                       Open{" "}
                       <span className="text-red-600 hover:text-black">
                         To Work
@@ -459,8 +474,6 @@ export default function PageMain(): React.ReactElement {
             </div>
           </div>
         </div>
-
-        <Marquee text="Chandrashekhar • FULL STACK DEV • REACT NATIVE • UI/UX DESIGN • READY TO WORK •" />
       </header>
 
       <section
@@ -756,7 +769,9 @@ export default function PageMain(): React.ReactElement {
 
             <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center w-full">
               <a
-                href="/projects"
+                href="https://github.com/StarDust130"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="w-full md:w-3/4 bg-black text-white p-8 border-2 border-black flex flex-col justify-center items-center text-center group cursor-pointer relative overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,0,0,1)] transition-all"
               >
                 <div className="absolute inset-0 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-in-out"></div>
