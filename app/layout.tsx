@@ -6,6 +6,7 @@ import FloatingDots from "./components/FloatingDots";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import BgSvg from "./components/BgSvg";
 import { displayFont, monoFont, serifFont } from "./fonts";
+import ShutterScreen from "./components/ShutterScreen";
 
 const geistSans = Spectral({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
           className="   shadow-glow-purple  min-h-screen w-full flex flex-col font-inter relative"
         >
           {children}
+            <ShutterScreen />
           <Analytics />
           <BgSvg />
           <FloatingDots />
