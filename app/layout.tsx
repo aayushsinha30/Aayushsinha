@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Spectral } from "next/font/google";
-// @ts-expect-error -- Next.js global CSS side-effect import
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import FloatingDots from "./components/FloatingDots";

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // A single, life-altering quote.
-const DEEP_QUOTE =   { text: "What you seek is seeking you.", author: "Rumi" };
+const DEEP_QUOTE = { text: "What you seek is seeking you.", author: "Rumi" };
 
 export default function SplashScreen() {
   const [showShutter, setShowShutter] = useState(true);
@@ -17,6 +17,21 @@ export default function SplashScreen() {
     }, 2800);
     return () => clearTimeout(timer);
   }, []);
+
+  // Prevent background scroll while splash is visible
+  useEffect(() => {
+    const originalOverflow =
+      typeof window !== "undefined" ? document.body.style.overflow : "";
+    if (showShutter) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = originalOverflow || "";
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow || "";
+    };
+  }, [showShutter]);
 
   return (
     <AnimatePresence>
