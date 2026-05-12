@@ -205,56 +205,123 @@ export default function PageMain(): React.ReactElement {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center md:hidden border-l-4 border-black"
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 bg-white z-50 flex flex-col justify-between md:hidden px-8 pt-8 pb-10 overflow-hidden"
           >
-            <div className="flex flex-col gap-8 text-center font-display font-black text-3xl uppercase">
+            {/* Top Bar with Close Button */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+              className="flex justify-end w-full"
+            >
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 -mr-2 active:scale-75 transition-transform text-black"
+                aria-label="Close menu"
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth="2.5"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </motion.div>
+
+            {/* Main Navigation - Scaled down typography */}
+            <div className="flex flex-col gap-2">
               {["Story", "Power", "Works", "Services"].map((item, i) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: i * 0.1 + 0.15,
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-red-600 transition-colors hover:scale-110 transform"
+                  className="group flex items-baseline gap-4 border-b border-black/10 pb-4 active:scale-[0.98] transition-transform origin-left"
                 >
-                  {item}
+                  <span className="text-sm font-mono text-black/30 font-bold">
+                    0{i + 1}
+                  </span>
+                  <span className="font-display font-black text-3xl uppercase tracking-tighter text-black group-active:text-red-600 transition-colors">
+                    {item}
+                  </span>
                 </motion.a>
               ))}
-              <Link
-                href="/projects"
-                className="relative hover:text-red-600 transition-colors group py-2"
-              >
-                Projects
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
+
+              {/* Projects Link */}
+              <Link href="/projects" onClick={() => setIsMenuOpen(false)}>
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.55, duration: 0.4, ease: "easeOut" }}
+                  className="group flex items-baseline gap-4 border-b border-black/10 pb-4 active:scale-[0.98] transition-transform origin-left mt-2"
+                >
+                  <span className="text-sm font-mono text-black/30 font-bold">
+                    05
+                  </span>
+                  <span className="font-display font-black text-3xl uppercase tracking-tighter text-black group-active:text-red-600 transition-colors">
+                    Projects
+                  </span>
+                </motion.div>
               </Link>
-              <motion.a
+            </div>
+
+            {/* Bottom Utility Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+              className="flex flex-col gap-6"
+            >
+              {/* High-contrast CTA */}
+              <a
                 href="mailto:csyadav0513@gmail.com"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-600 underline decoration-2 underline-offset-4"
+                className="flex items-center justify-between text-lg font-black uppercase text-white bg-red-600 p-4 active:scale-[0.98] transition-transform"
               >
-                Let's Talk
-              </motion.a>
-            </div>
-            <div className="absolute bottom-10 text-xs font-mono uppercase tracking-widest text-gray-400">
-              System Status:{" "}
-              <span className="text-green-500 animate-pulse font-bold">
-                Online
-              </span>
-            </div>
+                <span>Let's Talk</span>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth="3"
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+
+              {/* System Status Dashboard Block */}
+              <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-black/50 bg-black/5 p-4">
+                <span>System Status</span>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-black font-bold">Online</span>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <header className="relative pt-32 pb-0 bg-transparent border-b-2 border-black overflow-hidden">
-        <div className="absolute top-32 left-4 md:left-10 text-[10px] font-mono text-gray-400 rotate-90 origin-left">
-          COORD: 34.55.12 // SECTOR 7
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 md:px-6 mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative">
             <div className="lg:col-span-7 flex flex-col justify-center relative z-20">
@@ -754,6 +821,7 @@ export default function PageMain(): React.ReactElement {
             <span className="font-mono text-red-500 text-sm uppercase tracking-widest mb-2 block">
               System Diagnostics
             </span>
+
             <h3 className="text-4xl md:text-6xl font-display font-black uppercase text-white mb-4">
               Why Hire Me?
             </h3>
