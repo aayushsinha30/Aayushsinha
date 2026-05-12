@@ -1,4 +1,6 @@
 "use client";
+
+// 📦 Imports
 import React, { useEffect, useState } from "react";
 import {
   motion,
@@ -40,8 +42,10 @@ import ProjectCard from "@/components/ui/ProjectCard";
 import Link from "next/link";
 import Image from "next/image";
 
+// 🧩 Types
 type GithubStats = { repos: number | null; followers: number | null };
 
+// 🧱 Reusable Feature Card Component
 const FeatureCard: React.FC<{
   title: string;
   description: string;
@@ -59,7 +63,9 @@ const FeatureCard: React.FC<{
   </div>
 );
 
+// 🚀 Main Page Component
 export default function PageMain(): React.ReactElement {
+  // 💾 State Management
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [githubStats, setGithubStats] = useState<GithubStats>({
@@ -73,14 +79,17 @@ export default function PageMain(): React.ReactElement {
   const heroBlurData =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Crect width='10' height='10' fill='%23e5e5e5'/%3E%3C/svg%3E";
 
+  // 📝 Contact Form States
   const [formName, setFormName] = useState<string>("");
   const [formBudget, setFormBudget] = useState<string>("");
   const [formMessage, setFormMessage] = useState<string>("");
   const [formEmail, setFormEmail] = useState<string>("");
 
+  // 📜 Scroll Animations
   const { scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
+  // ⚙️ Side Effects
   useEffect(() => {
     const handleScroll = () =>
       setScrolled(typeof window !== "undefined" && window.scrollY > 50);
@@ -102,6 +111,7 @@ export default function PageMain(): React.ReactElement {
       .catch((err) => console.error("GitHub Fetch Error:", err));
   }, []);
 
+  // 🔒 Lock background scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -110,30 +120,35 @@ export default function PageMain(): React.ReactElement {
     }
   }, [isMenuOpen]);
 
+  // ✉️ Form Handler to send email
   const handleSendSignal = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = `Inquiry: Project Discussion with ${formName}`;
     const body = `Hi Chandrashekhar,%0D%0A%0D%0A${formMessage}%0D%0A%0D%0A-----------------------------------%0D%0AProject Budget: ${formBudget}%0D%0AContact Email: ${formEmail}%0D%0A%0D%0ABest regards,%0D%0A${formName}`;
     if (typeof window !== "undefined") {
       window.location.href = `mailto:csyadav0513@gmail.com?subject=${encodeURIComponent(
-        subject
+        subject,
       )}&body=${body}`;
     }
   };
 
+  // 🎨 Rendering UI
   return (
     <div className="min-h-screen bg-[#f0f0f0] text-black font-sans selection:bg-red-600 selection:text-white overflow-x-hidden cursor-none relative">
+      {/* 🎭 Global Utilities (Cursor, Grid, etc.) */}
       <CustomCursor />
       <CyberGrid />
       <BackToTop />
 
       <div className="noise-overlay"></div>
 
+      {/* 📏 Scroll Progress Indicator */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-red-600 origin-left z-[60]"
         style={{ scaleX }}
       />
 
+      {/* 🌐 Navigation Bar */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 border-b-2 border-black ${
           scrolled
@@ -198,6 +213,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </nav>
 
+      {/* 📱 Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -306,11 +322,12 @@ export default function PageMain(): React.ReactElement {
                   />
                 </svg>
               </a>
-
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* 🦸‍♂️ Hero Section */}
       <header className="relative pt-12 md:pt-32 pb-12 bg-transparent border-b-2 border-black overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 items-center relative">
@@ -467,6 +484,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </header>
 
+      {/* 📖 Story / About Me Section */}
       <section
         id="story"
         className="py-16 md:py-24 border-b-2 border-black bg-white relative"
@@ -543,7 +561,7 @@ export default function PageMain(): React.ReactElement {
                     Total
                   </span>
                 </div>
-                <h3 className="text-5xl font-black font-display text-red-600 mb-1">
+                <h3 className="text-4xl md:text-5xl font-black font-display text-red-600 mb-1">
                   10,000+
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-widest text-gray-500">
@@ -596,6 +614,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
+      {/* ⚡ Skills & Power Section */}
       <section
         id="power"
         className="py-16 md:py-24 border-b-2 border-black bg-[#f0f0f0] relative overflow-hidden"
@@ -695,6 +714,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
+      {/* 📁 Selected Works Section */}
       <section
         id="works"
         className="py-16 md:py-24 border-b-2 border-black bg-white"
@@ -784,8 +804,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
-  
-
+      {/* 💼 Why Hire Me / Diagnostics Section */}
       <section className="py-24 border-b-2 border-black bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
@@ -835,6 +854,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
+      {/* 📞 Contact / Signals Section */}
       <section
         id="comms"
         className="py-16 md:py-24 bg-white text-black relative overflow-hidden"
@@ -960,6 +980,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
+      {/* 🟢 System Status Section */}
       <section className="bg-white border-t-2 border-black py-8">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -996,6 +1017,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
+      {/* 🏁 Footer Section */}
       <footer className="bg-black text-white border-t-2 border-white/10 pt-16 pb-0 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 pb-24">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
