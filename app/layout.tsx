@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Spectral } from "next/font/google";
+// @ts-expect-error -- Next.js global CSS side-effect import
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import FloatingDots from "./components/FloatingDots";
@@ -52,7 +53,7 @@ export default function RootLayout({
           className="   shadow-glow-purple  min-h-screen w-full flex flex-col font-inter relative"
         >
           {children}
-            <ShutterScreen />
+          <ShutterScreen />
           <Analytics />
           <BgSvg />
           <FloatingDots />
