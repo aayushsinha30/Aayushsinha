@@ -37,7 +37,6 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import BentoCard from "@/components/ui/BentoCard";
 import SkillRow from "@/components/ui/SkillRow";
 import ProjectCard from "@/components/ui/ProjectCard";
-import ServiceCard from "@/components/ui/ServiceCard";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -164,7 +163,7 @@ export default function PageMain(): React.ReactElement {
           </div>
 
           <div className="hidden md:flex gap-8 font-mono text-xs font-bold uppercase tracking-widest items-center">
-            {["Story", "Power", "Works", "Services"].map((item) => (
+            {["Story", "Power", "Works"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -238,7 +237,7 @@ export default function PageMain(): React.ReactElement {
 
             {/* Main Navigation - Scaled down typography */}
             <div className="flex flex-col gap-2">
-              {["Story", "Power", "Works", "Services"].map((item, i) => (
+              {["Story", "Power", "Works"].map((item, i) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -270,7 +269,7 @@ export default function PageMain(): React.ReactElement {
                   className="group flex items-baseline gap-4 border-b border-black/10 pb-4 active:scale-[0.98] transition-transform origin-left mt-2"
                 >
                   <span className="text-sm font-mono text-black/30 font-bold">
-                    05
+                    04
                   </span>
                   <span className="font-display font-black text-3xl uppercase tracking-tighter text-black group-active:text-red-600 transition-colors">
                     Projects
@@ -308,14 +307,6 @@ export default function PageMain(): React.ReactElement {
                 </svg>
               </a>
 
-              {/* System Status Dashboard Block */}
-              <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-black/50 bg-black/5 p-4">
-                <span>System Status</span>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-black font-bold">Online</span>
-                </div>
-              </div>
             </motion.div>
           </motion.div>
         )}
@@ -340,7 +331,7 @@ export default function PageMain(): React.ReactElement {
                     <div className="absolute right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full border border-black"></div>
                   </div>
                   <span className="font-mono text-[10px] md:text-xs font-bold shrink-0">
-                    STARTING ARC
+                    Let's Build Something Great Together
                   </span>
                 </div>
 
@@ -583,10 +574,10 @@ export default function PageMain(): React.ReactElement {
                   <div>
                     <div className="flex justify-between text-xs font-mono font-bold mb-1">
                       <span>Back-End</span>
-                      <span>85%</span>
+                      <span>95%</span>
                     </div>
                     <div className="h-2 w-full bg-gray-300 rounded-full overflow-hidden">
-                      <div className="h-full bg-red-600 w-[85%]"></div>
+                      <div className="h-full bg-red-600 w-[95%]"></div>
                     </div>
                   </div>
                   <div>
@@ -724,14 +715,14 @@ export default function PageMain(): React.ReactElement {
               <p className="text-sm font-mono text-gray-500 mb-3 md:mb-2 md:max-w-xs mx-auto md:mx-0">
                 Projects I built to learn and master modern web development.
               </p>
-              <Link
+              <a
                 href="https://github.com/StarDust130"
                 target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-widest bg-black text-white px-3 py-2 hover:bg-red-600 transition-colors w-full md:w-auto justify-center"
+                rel="noopener noreferrer"
+                className="inline-flex z-10 cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-widest bg-black text-white px-3 py-2 hover:bg-red-600 transition-colors w-full md:w-auto justify-center"
               >
                 <SiGithub size={14} /> github.com/StarDust130
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -793,41 +784,7 @@ export default function PageMain(): React.ReactElement {
         </div>
       </section>
 
-      <section
-        id="services"
-        className="py-16 md:py-24 border-b-2 border-black bg-[#f0f0f0]"
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <SectionTitle
-            subtitle="Chapter 03"
-            japText="任務"
-            hindiText="सेवाएं (Services)"
-            align="center"
-          >
-            Mission Board
-          </SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <ServiceCard
-              title="Website Dev"
-              price="$15/hr"
-              description="I will build your portfolio, landing page, or business site using the latest Next.js tech."
-              icon={Monitor}
-            />
-            <ServiceCard
-              title="Bug Fixes"
-              price="$10/hr"
-              description="Have a React issue? I can debug your code, fix CSS problems, and improve responsiveness."
-              icon={Terminal}
-            />
-            <ServiceCard
-              title="Convert Design"
-              price="$20/hr"
-              description="Give me a Figma design and I will turn it into pixel-perfect, mobile-friendly code."
-              icon={Palette}
-            />
-          </div>
-        </div>
-      </section>
+  
 
       <section className="py-24 border-b-2 border-black bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
@@ -1079,14 +1036,6 @@ export default function PageMain(): React.ReactElement {
                       className="hover:text-red-500 transition-colors"
                     >
                       Works
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#services"
-                      className="hover:text-red-500 transition-colors"
-                    >
-                      Services
                     </a>
                   </li>
                 </ul>
