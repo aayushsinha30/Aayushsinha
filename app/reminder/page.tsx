@@ -225,7 +225,6 @@ export default function JapanTripCountdown() {
         className="w-full bg-[#D91A2A] border-t-[2px] border-[#0A0A0A] p-4 sm:p-8 relative z-10 shrink-0"
       >
         <div className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-6 w-full">
-          {/* Data Block: Financial Target */}
           {/* Typographical Financial Target (Japanese Brutalist Text) */}
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-6 border-l-[4px] sm:border-l-[8px] border-[#0A0A0A] pl-4 sm:pl-6 py-2">
             <div className="flex flex-col">
@@ -241,6 +240,7 @@ export default function JapanTripCountdown() {
               </span>
             </div>
           </div>
+
 
           {/* Aggressive Directive */}
           <div className="flex-1 text-center xl:text-right">
