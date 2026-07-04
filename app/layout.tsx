@@ -16,22 +16,22 @@ const geistSans = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: "Chandrashekhar",
+  title: "Aayush Sinha",
   description:
-    "Official website of Chandrashekhar, a passionate developer, dreamer, and future startup founder.",
-  keywords: "Chandrashekhar, web developer, frontend, startup, programmer",
+    "Official website of Aayush Sinha, a passionate full-stack developer, dreamer, and builder from India.",
+  keywords: "Aayush Sinha, web developer, frontend, Next.js, React, programmer",
   openGraph: {
-    title: "Chandrashekhar - Developer & Innovator",
+    title: "Aayush Sinha - Developer & Innovator",
     description:
       "Explore sleek, functional web experiences built with creativity.",
-    url: "https://chandrashekhar.life",
-    siteName: "Chandrashekhar",
+    url: "https://github.com/aayushsinha30",
+    siteName: "Aayush Sinha",
     images: [
       {
-        url: "https://chandrashekhar.life/og-image.jpg", // Replace with your real OG image URL
+        url: "/aayush.jpg",
         width: 1200,
         height: 630,
-        alt: "Chandrashekhar - Developer Portfolio",
+        alt: "Aayush Sinha - Developer Portfolio",
       },
     ],
     type: "website",

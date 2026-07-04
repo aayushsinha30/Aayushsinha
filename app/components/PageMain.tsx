@@ -74,7 +74,7 @@ export default function PageMain(): React.ReactElement {
   });
   const [currentHeroImage] = useState<number>(0);
 
-  const heroImages: string[] = ["/24.jpg"];
+  const heroImages: string[] = ["/aayush.jpg"];
 
   const heroBlurData =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Crect width='10' height='10' fill='%23e5e5e5'/%3E%3C/svg%3E";
@@ -98,7 +98,7 @@ export default function PageMain(): React.ReactElement {
   }, []);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/StarDust130")
+    fetch("https://api.github.com/users/aayushsinha30")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.public_repos !== undefined) {
@@ -124,9 +124,9 @@ export default function PageMain(): React.ReactElement {
   const handleSendSignal = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = `Inquiry: Project Discussion with ${formName}`;
-    const body = `Hi Chandrashekhar,%0D%0A%0D%0A${formMessage}%0D%0A%0D%0A-----------------------------------%0D%0AProject Budget: ${formBudget}%0D%0AContact Email: ${formEmail}%0D%0A%0D%0ABest regards,%0D%0A${formName}`;
+    const body = `Hi Aayush,%0D%0A%0D%0A${formMessage}%0D%0A%0D%0A-----------------------------------%0D%0AProject Budget: ${formBudget}%0D%0AContact Email: ${formEmail}%0D%0A%0D%0ABest regards,%0D%0A${formName}`;
     if (typeof window !== "undefined") {
-      window.location.href = `mailto:csyadav0513@gmail.com?subject=${encodeURIComponent(
+      window.location.href = `mailto:sinhaaayush30@gmail.com?subject=${encodeURIComponent(
         subject,
       )}&body=${body}`;
     }
@@ -165,11 +165,11 @@ export default function PageMain(): React.ReactElement {
             }
           >
             <div className="w-10 h-10 bg-black text-white flex items-center justify-center font-black font-serif text-xl group-hover:bg-red-600 transition-colors border-2 border-transparent group-hover:border-black shrink-0">
-              CY
+              AS
             </div>
             <div className="flex flex-col overflow-hidden">
               <span className="font-mono text-xs md:text-sm uppercase tracking-widest font-bold leading-none whitespace-nowrap truncate max-w-[150px] md:max-w-none">
-                Chandrashekhar
+                Aayush Sinha
               </span>
               <span className="font-mono text-[10px] text-gray-500 uppercase leading-none mt-1 hidden sm:block">
                 Full Stack Developer
@@ -197,7 +197,7 @@ export default function PageMain(): React.ReactElement {
             </Link>
             <Link
               target="_blank"
-              href="mailto:csyadav0513@gmail.com"
+              href="mailto:sinhaaayush30@gmail.com"
               className="bg-black text-white border-2 border-black px-5 py-2 hover:bg-red-600 hover:border-red-600 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,0)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             >
               Let&apos;s Talk <ArrowRight size={14} />
@@ -303,7 +303,7 @@ export default function PageMain(): React.ReactElement {
             >
               {/* High-contrast CTA */}
               <a
-                href="mailto:csyadav0513@gmail.com"
+                href="mailto:sinhaaayush30@gmail.com"
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-between text-lg font-black uppercase text-white bg-red-600 p-4 active:scale-[0.98] transition-transform"
               >
@@ -371,7 +371,7 @@ export default function PageMain(): React.ReactElement {
                 {/* Buttons Container */}
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full pb-2">
                   <Link
-                    href="https://github.com/StarDust130"
+                    href="https://github.com/aayushsinha30"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto justify-center bg-red-600 text-white px-6 md:px-8 py-3.5 md:py-4 font-mono font-bold uppercase hover:bg-black transition-colors manga-shadow active:translate-x-1 active:translate-y-1 active:shadow-none border-2 border-black flex items-center gap-2 group text-xs md:text-base"
@@ -383,7 +383,7 @@ export default function PageMain(): React.ReactElement {
                     />
                   </Link>
                   <Link
-                    href="mailto:csyadav0513@gmail.com"
+                    href="mailto:sinhaaayush30@gmail.com"
                     className="w-full sm:w-auto justify-center bg-white text-black border-2 border-black px-6 md:px-8 py-3.5 md:py-4 font-mono font-bold uppercase hover:bg-yellow-400 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center gap-2 text-xs md:text-base"
                   >
                     <Mail size={16} /> Let&apos;s Talk
@@ -427,7 +427,7 @@ export default function PageMain(): React.ReactElement {
                     {/* CRITICAL FIX: Re-inserted Next.js Image component here */}
                     <Image
                       src={heroImages[currentHeroImage]} // Uses your state variable
-                      alt="Chandrashekhar"
+                      alt="Aayush Sinha"
                       fill
                       priority
                       sizes="(min-width: 1024px) 520px, (min-width: 768px) 480px, 100vw"
@@ -438,14 +438,14 @@ export default function PageMain(): React.ReactElement {
                         const img = e.currentTarget;
                         img.onerror = null;
                         img.src =
-                          "https://via.placeholder.com/400x600?text=Chandrashekhar+Y";
+                          "https://via.placeholder.com/400x600?text=Aayush+Sinha";
                       }}
                     />
 
                     {/* Gradient Overlay text */}
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-4 md:p-6 text-white pt-20">
                       <h3 className="text-xl sm:text-3xl md:text-4xl font-display font-bold mb-1 uppercase leading-none">
-                        Chandrashekhar
+                        Aayush Sinha
                       </h3>
                       <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
                         <span className="font-mono text-[8px] md:text-[10px] bg-red-600 text-white px-1.5 py-0.5 font-bold shrink-0">
@@ -466,7 +466,7 @@ export default function PageMain(): React.ReactElement {
                     STATUS
                   </span>
                   <Link
-                    href="mailto:csyadav0513@gmail.com"
+                    href="mailto:sinhaaayush30@gmail.com"
                     target="_blank"
                     className="z-10 truncate ml-2"
                   >
@@ -507,14 +507,13 @@ export default function PageMain(): React.ReactElement {
                 <span className="font-extrabold underline decoration-yellow-400">
                   India
                 </span>
-                . While I am new to the industry, I have spent thousands of
-                hours mastering code.
+                , born on 30 July 2006 — 19 years old and already building real things. I've spent thousands of hours mastering code and turning ideas into live products.
               </p>
               <p className="mb-8">
                 I focus on <strong>Next.js</strong> and <strong>React</strong>.
                 I build websites that look great, load fast, and work perfectly
                 on all devices. I treat every project like my own, ensuring you
-                get the best quality work.
+                get the best quality work. Reach me at <strong>9827930460</strong> anytime.
               </p>
 
               <div className="p-6 bg-[#f9f9f9] border-l-4 border-black italic font-mono text-sm relative">
@@ -527,7 +526,7 @@ export default function PageMain(): React.ReactElement {
                   trust builds business.&quot;
                 </p>
                 <div className="mt-2 font-bold text-right text-red-600">
-                  — Chandrashekhar
+                  — Aayush Sinha
                 </div>
               </div>
             </div>
@@ -701,7 +700,7 @@ export default function PageMain(): React.ReactElement {
                 ))}
                 <div className="mt-4 pt-4 border-t border-black/10 text-center text-xs text-gray-500 uppercase tracking-widest font-bold">
                   <Link
-                    href="mailto:csyadav0513@gmail.com"
+                    href="mailto:sinhaaayush30@gmail.com"
                     target="_blank"
                     className="mt-4 pt-4 border-t border-black/10 text-center text-xs text-gray-500 uppercase tracking-widest font-bold hover:text-red-600 transition-colors cursor-pointer"
                   >
@@ -736,12 +735,12 @@ export default function PageMain(): React.ReactElement {
                 Projects I built to learn and master modern web development.
               </p>
               <a
-                href="https://github.com/StarDust130"
+                href="https://github.com/aayushsinha30"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex z-10 cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-widest bg-black text-white px-3 py-2 hover:bg-red-600 transition-colors w-full md:w-auto justify-center"
               >
-                <SiGithub size={14} /> github.com/StarDust130
+                <SiGithub size={14} /> github.com/aayushsinha30
               </a>
             </div>
           </div>
@@ -755,7 +754,7 @@ export default function PageMain(): React.ReactElement {
               color="bg-pink-500"
               image="/pro-2.png"
               link="https://neo-brut.vercel.app/"
-              githubLink="https://github.com/StarDust130/Neo-Brut"
+              githubLink="https://github.com/aayushsinha30/Neo-Brut"
             />
             <ProjectCard
               index={1}
@@ -765,7 +764,7 @@ export default function PageMain(): React.ReactElement {
               color="bg-red-500"
               image="/pro-1.png"
               link="https://sarathi-ai-topaz.vercel.app/"
-              githubLink="https://github.com/StarDust130/sarathi-ai"
+              githubLink="https://github.com/aayushsinha30/sarathi-ai"
             />
             <ProjectCard
               index={2}
@@ -775,12 +774,12 @@ export default function PageMain(): React.ReactElement {
               color="bg-yellow-400"
               image="/pro-3.png"
               link="https://hungrr.in/"
-              githubLink="https://github.com/StarDust130/Hungrr"
+              githubLink="https://github.com/aayushsinha30/Hungrr"
             />
 
             <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center w-full">
               <a
-                href="https://github.com/StarDust130"
+                href="https://github.com/aayushsinha30"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="w-full md:w-3/4 bg-black text-white p-8 border-2 border-black flex flex-col justify-center items-center text-center group cursor-pointer relative overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,0,0,1)] transition-all"
@@ -879,7 +878,7 @@ export default function PageMain(): React.ReactElement {
 
             <div className="flex gap-4">
               <Link
-                href="https://github.com/StarDust130"
+                href="https://github.com/aayushsinha30"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-16 h-16 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors group"
@@ -887,7 +886,7 @@ export default function PageMain(): React.ReactElement {
                 <SiGithub size={24} />
               </Link>
               <Link
-                href="https://x.com/the_csyadav"
+                href="https://x.com/aayushsinha30"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-16 h-16 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-colors group"
@@ -895,7 +894,7 @@ export default function PageMain(): React.ReactElement {
                 <FaXTwitter size={24} />
               </Link>
               <Link
-                href="mailto:csyadav0513@gmail.com"
+                href="mailto:sinhaaayush30@gmail.com"
                 className="w-16 h-16 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-colors group"
               >
                 <SiGmail size={24} />
@@ -1023,7 +1022,7 @@ export default function PageMain(): React.ReactElement {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
               <h4 className="text-3xl md:text-4xl font-black font-display uppercase mb-6">
-                Chandrashekhar
+                Aayush Sinha
               </h4>
               <p className="font-serif italic text-gray-400 max-w-sm text-lg">
                 Building the web one component at a time. Honest work, clean
@@ -1069,7 +1068,7 @@ export default function PageMain(): React.ReactElement {
                 <ul className="space-y-2 font-mono text-sm text-gray-400">
                   <li>
                     <Link
-                      href="https://x.com/the_csyadav"
+                      href="https://x.com/aayushsinha30"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-red-500 transition-colors"
@@ -1079,7 +1078,7 @@ export default function PageMain(): React.ReactElement {
                   </li>
                   <li>
                     <Link
-                      href="https://github.com/StarDust130"
+                      href="https://github.com/aayushsinha30"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-red-500 transition-colors"
@@ -1089,12 +1088,22 @@ export default function PageMain(): React.ReactElement {
                   </li>
                   <li>
                     <Link
-                      href="mailto:csyadav0513@gmail.com"
+                      href="mailto:sinhaaayush30@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-red-500 transition-colors"
                     >
                       Email
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://www.linkedin.com/in/aayushsinha30"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-red-500 transition-colors"
+                    >
+                      LinkedIn
                     </Link>
                   </li>
                   <li></li>
@@ -1104,7 +1113,7 @@ export default function PageMain(): React.ReactElement {
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-mono uppercase tracking-widest text-gray-500">
-            <span>© {new Date().getFullYear()} Chandrashekhar</span>
+            <span>© {new Date().getFullYear()} Aayush Sinha</span>
 
             <span className="mt-2 md:mt-0">Made with ❤️ in India</span>
           </div>
@@ -1117,10 +1126,10 @@ export default function PageMain(): React.ReactElement {
             transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
           >
             <span className="text-[8rem] md:text-[20rem] font-black font-display text-white mr-12">
-              CHANDRASHEKHAR
+              AAYUSH SINHA
             </span>
             <span className="text-[8rem] md:text-[20rem] font-black font-display text-white mr-12">
-              CHANDRASHEKHAR
+              AAYUSH SINHA
             </span>
           </motion.div>
         </div>

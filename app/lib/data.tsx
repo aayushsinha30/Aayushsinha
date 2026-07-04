@@ -11,40 +11,25 @@ import { Memory } from "@/types";
 
 export const projects = [
   {
-    title: "Meme Machine",
-    icon: PartyPopper,
-    description: "Because the internet needs more laughs 😂",
-    tech: ["React", "Canvas", "AWS Lambda"],
-  },
-  {
-    title: "AI Chef",
-    icon: Puzzle,
-    description: "Bot that creates recipes from fridge leftovers 🥦🤖",
-    tech: ["Python", "GPT-4", "Next.js"],
-  },
-  {
-    title: "Bug Zapper",
-    icon: Bug,
-    description: "Catching bugs faster than a frog's tongue 🐸",
-    tech: ["TypeScript", "Jest", "Cypress"],
-  },
-  {
-    title: "Cloud Commander",
+    title: "Aether Grid",
     icon: Globe,
-    description: "Managing cloud stuff without crying ☁️😭",
-    tech: ["AWS", "Terraform", "K8s"],
+    description: "A production-grade full-stack app live on the web 🌐⚡",
+    tech: ["Next.js", "React", "Vercel"],
+    link: "https://aether-gride-production.vercel.app/",
   },
   {
-    title: "Code Café",
-    icon: Coffee,
-    description: "Where code meets caffeine addiction ☕💻",
-    tech: ["Next.js", "Strapi", "Stripe"],
+    title: "Voter",
+    icon: BotMessageSquare,
+    description: "Democratic decision-making, built with code 🗳️✅",
+    tech: ["Next.js", "MongoDB", "Tailwind"],
+    link: "https://voter-ten-tan.vercel.app/",
   },
   {
-    title: "AI DJ",
-    icon: Bot,
-    description: "Mixing beats worse than your uncle at weddings 🎧🤖",
-    tech: ["Python", "Spotify API", "ML"],
+    title: "Agrix",
+    icon: Puzzle,
+    description: "AgriTech meets modern web — farming gets smarter 🌾🤖",
+    tech: ["React", "Node.js", "Vercel"],
+    link: "https://agrix-ivory.vercel.app/",
   },
 ];
 
